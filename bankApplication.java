@@ -31,6 +31,7 @@ public static void main(String[] args) {
     while(running){
 
         boolean loggedIn = false;
+        int currUserIdentity = -1;
 
             while(!loggedIn){
                 
@@ -89,7 +90,7 @@ public static void main(String[] args) {
                             if (passwords.get(tempPosition).contains(tempPassword)){
                                 System.out.println("Welcome back, " + tempUserName + ".");
                                 loggedIn = true;
-                                int currUserIdentity = tempPosition;
+                                currUserIdentity = tempPosition;
                             }
 
                             else {
@@ -101,7 +102,7 @@ public static void main(String[] args) {
                 }
 
                 //exit
-                else if (userInput.equals("3")){
+                if (userInput.equals("3")){
                     System.out.println("Thank you for your patronage.");
                     System.exit(0);
                 }
@@ -110,6 +111,7 @@ public static void main(String[] args) {
 
             LOGGEDBANK:
             while(loggedIn){
+
 
                 //main menu
                 System.out.println("Hello, " + usernames.get(currUserIdentity) + "\n");
