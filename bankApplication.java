@@ -148,6 +148,7 @@ public static void main(String[] args) {
                         else {
                             accountBalances.set(currUserIdentity, ((accountBalances.get(currUserIdentity) - withdrawAmount)));
                             walletBalances.set(currUserIdentity, (walletBalances.get(currUserIdentity) + withdrawAmount));
+                            System.out.println("Withdrawal successful, you should receive the funds into your nominated wallet imminently.\n")
                         }
                         continue LOGGEDBANK;
                     }
@@ -163,6 +164,7 @@ public static void main(String[] args) {
                         else {
                             walletBalances.set(currUserIdentity, ((walletBalances.get(currUserIdentity) - depositAmount)));
                             accountBalances.set(currUserIdentity, (accountBalances.get(currUserIdentity) + depositAmount));
+                            System.out.println("Deposit successful.\n")
                         }
                         continue LOGGEDBANK;
                     }
@@ -171,6 +173,7 @@ public static void main(String[] args) {
                         System.out.println("Please enter your updated external wallet amount to two deminal places: ");
                         Double updatedAmount = scnr.nextDouble();
                         walletBalances.set(currUserIdentity, updatedAmount);
+                        System.out.println("Update successful.\n")
                     }
 
                     if (userInput.equals("5")){
